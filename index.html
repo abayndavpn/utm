@@ -55,15 +55,34 @@
                 redirectUrl += `?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}&utm_term=${term}`;
             }
 
-            // Перенаправляем пользователя через 5 секунд
+            // Перенаправляем пользователя через 2 секунды
             setTimeout(function() {
                 window.location.href = redirectUrl;
-            }, 5000);
+            }, 2000);
         }
 
         // Выполняем перенаправление при загрузке страницы
         window.onload = redirectUser;
     </script>
+
+    <!-- Уменьшаем размер текста через CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px; /* Меньший размер текста */
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 18px; /* Уменьшение размера заголовка */
+        }
+
+        a {
+            font-size: 14px; /* Размер текста в ссылке */
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
     <h1>Пожалуйста, подождите. Если перенаправление не произошло, <a href="https://t.me/abaynda_VPN">кликните здесь</a>.</h1>
