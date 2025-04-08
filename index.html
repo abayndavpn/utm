@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправление...</title>
+    
+    <!-- Код Яндекс.Метрики -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) { return; }
+            }
+            k=e.createElement(t);
+            a=e.getElementsByTagName(t)[0];
+            k.async=1;
+            k.src=r;
+            a.parentNode.insertBefore(k,a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(99950007, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/99950007" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- Конец кода Яндекс.Метрики -->
+
+    <script type="text/javascript">
+        // Функция для получения параметра из URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Функция для перенаправления
+        function redirectUser() {
+            // Получаем значения UTM-меток из URL
+            const source = getParameterByName('utm_source');
+            const medium = getParameterByName('utm_medium');
+            const campaign = getParameterByName('utm_campaign');
+            const term = getParameterByName('utm_term');
+
+            // Строим ссылку для перенаправления в зависимости от меток
+            let redirectUrl = 'https://t.me/abaynda_VPN'; // основной URL для Telegram
+
+            // Добавляем UTM-метки к URL
+            if (source && medium && campaign && term) {
+                redirectUrl += `?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}&utm_term=${term}`;
+            }
+
+            // Перенаправляем пользователя через 5 секунд
+            setTimeout(function() {
+                window.location.href = redirectUrl;
+            }, 5000);
+        }
+
+        // Выполняем перенаправление при загрузке страницы
+        window.onload = redirectUser;
+    </script>
+</head>
+<body>
+    <h1>Пожалуйста, подождите. Если перенаправление не произошло, <a href="https://t.me/abaynda_VPN">кликните здесь</a>.</h1>
+</body>
+</html>
